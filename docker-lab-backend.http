@@ -1,0 +1,38 @@
+@docker_lab_backend_HostAddress = http://localhost:5248
+
+GET {{docker_lab_backend_HostAddress}}/api/tasks
+Accept: application/json
+
+###
+
+POST {{docker_lab_backend_HostAddress}}/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Learn Docker",
+  "description": "Containerize the .NET app",
+  "isCompleted": false
+}
+
+###
+
+GET {{docker_lab_backend_HostAddress}}/api/tasks/1
+Accept: application/json
+
+###
+
+PUT {{docker_lab_backend_HostAddress}}/api/tasks/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Learn Docker",
+  "description": "Containerize the .NET app (In Progress)",
+  "isCompleted": false
+}
+
+###
+
+DELETE {{docker_lab_backend_HostAddress}}/api/tasks/1
+
+###
